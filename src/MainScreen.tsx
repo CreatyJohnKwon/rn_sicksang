@@ -1,18 +1,13 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
-import { Text, StatusBar } from 'react-native';
+import { View, Text, StatusBar } from 'react-native';
+
+import { default as HomeScreen } from './screens/ProfileScreen'
+import { default as ProfileScreen } from './screens/ProfileScreen'
 //npm install --save-dev @types/react-native-vector-icons
 
 const Tab = createBottomTabNavigator();
-
-function HomeScreen() {
-    return <Text>홈화면</Text>;
-}
-
-function ProfileScreen() {
-    return <Text>프로필 화면</Text>;
-}
 
 function MainScreen() {
 
