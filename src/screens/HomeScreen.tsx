@@ -1,12 +1,12 @@
-import React from "react";
-import { View, Text } from 'react-native';
-import styles from '../styles/Stylist'
+import styles from '../styles/Stylist';
+import React, { useEffect, useState, Suspense } from 'react';
 
-const HomeScreen = () => {  
+const HomeScreen = () => {
+
   return (
-    <View style={styles.home}>
-      <Text style={styles.text}>홈</Text>
-    </View>
+    <styles.home>
+      <styles.text>홈</styles.text>
+    </styles.home>
   );
 };
 

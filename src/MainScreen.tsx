@@ -1,19 +1,17 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { StatusBar, View } from 'react-native';
-import styles from './styles/Stylist'
-
-import { default as HomeScreen } from './screens/HomeScreen'
-import { default as ProfileScreen } from './screens/ProfileScreen'
-//npm install --save-dev @types/react-native-vector-icons
+import { StatusBar } from 'react-native';
+import styles from './styles/Stylist';
+// import React, { lazy } from 'react';
+import HomeScreen from './screens/HomeScreen';
+import ProfileScreen from './screens/ProfileScreen';
 
 const Tab = createBottomTabNavigator();
+// const HomeScreen = lazy(() => import('./screens/HomeScreen'));
+// const ProfileScreen = lazy(() => import('./screens/ProfileScreen'));
 
 function MainScreen() {
-
-
-
     return (
         <NavigationContainer>
             <StatusBar barStyle="dark-content" backgroundColor="white" />
@@ -30,13 +28,13 @@ function MainScreen() {
                 }}>
                 <Tab.Screen
                     name="Home"
-                    component={ HomeScreen }
+                    component={HomeScreen}
                     options={{
                         title: '홈',
                         tabBarIcon: ({ color, focused }) => (
-                            <View style={ styles.tabBarIcon }>
-                                <MaterialCommunityIcons name={ focused ? 'home-circle' : 'home-circle-outline'} color={color} size={24} />
-                            </View>
+                            <styles.tabBarIcon>
+                                <MaterialCommunityIcons name={focused ? 'home-circle' : 'home-circle-outline'} color={color} size={24} />
+                            </styles.tabBarIcon>
                         ),
                         tabBarLabelStyle: {
                             fontSize: 15,
@@ -47,13 +45,13 @@ function MainScreen() {
                 />
                 <Tab.Screen
                     name="Profile"
-                    component={ ProfileScreen }
+                    component={ProfileScreen}
                     options={{
                         title: '프로필',
                         tabBarIcon: ({ color, focused }) => (
-                            <View style={ styles.tabBarIcon }>
-                                <MaterialCommunityIcons name={ focused ? 'account-circle' : 'account-circle-outline' } color={color} size={24} /> 
-                            </View>
+                            <styles.tabBarIcon>
+                                <MaterialCommunityIcons name={focused ? 'account-circle' : 'account-circle-outline'} color={color} size={24} />
+                            </styles.tabBarIcon>
                         ),
                         tabBarLabelStyle: {
                             fontSize: 15,
@@ -63,7 +61,7 @@ function MainScreen() {
                     }}
                 />
             </Tab.Navigator>
-        </NavigationContainer>
+        </NavigationContainer >
     );
 }
 
