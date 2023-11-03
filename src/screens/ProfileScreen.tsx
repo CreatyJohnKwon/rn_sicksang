@@ -1,10 +1,11 @@
 import React from "react";
-import { StyleSheet, View, Text } from 'react-native';
+import { View, Text } from 'react-native';
+import styles from '../styles/Stylist'
 
 const ProfileScreen = () => {  
   return (
-    <View>
-      <Text>프로필 화면</Text>
+    <View style={styles.profile}>
+      <Text style={styles.text}>프로필</Text>
     </View>
   );
 };
