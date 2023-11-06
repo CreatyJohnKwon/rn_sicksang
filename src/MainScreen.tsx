@@ -1,26 +1,27 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
-import { StatusBar } from 'react-native';
 import styles from './styles/Stylist';
 // import React, { lazy } from 'react';
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
+import { StatusBar } from 'react-native';
+import colors from './styles/colors';
 
 const Tab = createBottomTabNavigator();
-// const HomeScreen = lazy(() => import('./screens/HomeScreen'));
-// const ProfileScreen = lazy(() => import('./screens/ProfileScreen'));
 
 function MainScreen() {
+    StatusBar.setBarStyle('dark-content');
+    StatusBar.setBackgroundColor(colors.lightgray);
+
     return (
         <NavigationContainer>
-            <StatusBar barStyle="dark-content" backgroundColor="white" />
             <Tab.Navigator
                 initialRouteName="Home"
                 screenOptions={{
                     headerShown: false,
-                    tabBarActiveTintColor: 'black',
-                    tabBarInactiveTintColor: 'lightgray',
+                    tabBarActiveTintColor: colors.black,
+                    tabBarInactiveTintColor: colors.lightgray,
                     tabBarLabelPosition: 'below-icon',
                     tabBarStyle: {
                         height: 57.5,
@@ -33,7 +34,10 @@ function MainScreen() {
                         title: '홈',
                         tabBarIcon: ({ color, focused }) => (
                             <styles.tabBarIcon>
-                                <MaterialCommunityIcons name={focused ? 'home-circle' : 'home-circle-outline'} color={color} size={24} />
+                                <MaterialCommunityIcons
+                                    name={focused ? 'home-circle' : 'home-circle-outline'}
+                                    color={color}
+                                    size={24} />
                             </styles.tabBarIcon>
                         ),
                         tabBarLabelStyle: {
@@ -50,7 +54,10 @@ function MainScreen() {
                         title: '프로필',
                         tabBarIcon: ({ color, focused }) => (
                             <styles.tabBarIcon>
-                                <MaterialCommunityIcons name={focused ? 'account-circle' : 'account-circle-outline'} color={color} size={24} />
+                                <MaterialCommunityIcons
+                                    name={focused ? 'account-circle' : 'account-circle-outline'}
+                                    color={color}
+                                    size={24} />
                             </styles.tabBarIcon>
                         ),
                         tabBarLabelStyle: {
@@ -61,7 +68,7 @@ function MainScreen() {
                     }}
                 />
             </Tab.Navigator>
-        </NavigationContainer >
+        </NavigationContainer>
     );
 }
 

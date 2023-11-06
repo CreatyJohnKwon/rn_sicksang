@@ -21,5 +21,19 @@
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
       </activity>
+
+      <activity android:name="com.kakao.sdk.auth.AuthCodeHandlerActivity"
+        android:exported="true">
+          <intent-filter>
+              <action android:name="android.intent.action.VIEW" />
+              <category android:name="android.intent.category.DEFAULT" />
+              <category android:name="android.intent.category.BROWSABLE" />
+
+              <!-- 카카오 디벨로퍼에서 받은 네이티브 앱 key를 test 텍스트를 대치하여 넣어준다. -->
+              <!-- kakao라는 텍스트는 지우지 않는다!!!!! -->
+              <data android:host="oauth"
+                  android:scheme="kakaoeee8b1ff00e9f8c2ce8018b29dbb9936" />
+          </intent-filter>
+      </activity>
     </application>
 </manifest>

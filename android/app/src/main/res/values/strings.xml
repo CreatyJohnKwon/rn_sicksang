@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">식상해</string>
+    <string name="kakao_app_key">eee8b1ff00e9f8c2ce8018b29dbb9936</string>
 </resources>
