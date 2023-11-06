@@ -84,6 +84,9 @@ https://initstory.tistory.com/61#google_vignette
 https://velog.io/@wook4506/React-Native-%EC%9A%94%EC%86%8C%EC%9D%98-%EB%B0%B0%EC%B9%98%EC%99%80-%EC%A0%95%EB%A0%AC
 https://yuddomack.tistory.com/entry/5React-Native-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EB%94%94%EC%9E%90%EC%9D%B8-1%EB%B6%80-flex%EC%99%80-width-height
 
+9. RN-SectionList 사용하기 (1106)
+https://velog.io/@jt_include_rw/React-Native-SectionList-to-FlashList
+
 ==================================( 공식 문서 )========================================
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).

@@ -1,15 +1,41 @@
-import styles from '../styles/Stylist';
-// import axios from 'axios'
-import React, { useState } from 'react';
+import styles from '../styles/HomeStylist';
+import axios from 'axios'
+import React, { useState, useEffect } from 'react';
 import { useFocusEffect } from '@react-navigation/native'
 import storage from '../controller/Store'
+import { FlatList } from 'react-native'
+import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+
+/** FastList로 담길 아이템 */
+const Item = ({ title }: any) => (
+  <styles.homeListItem>
+    <styles.homeListImage source={require('../assets/ic_launcher.png')} imageStyle={{ borderRadius: 50 }} />
+    <styles.homeListTitle>{title} 냉장고</styles.homeListTitle>
+  </styles.homeListItem>
+);
 
 const HomeScreen = () => {
   const [userName, setUserName] = useState('');
   const [imagePath, setImagePath] = useState(require('../assets/ic_launcher.png')); // 초기 이미지 설정
+  const [datas, setDatas] = useState();
 
   const NICKNAME = "NICKNAMENICKNAMENICKNAMENICKNAME";
   const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
+
+  const renderItem = ({ item }: any) => <Item title={item.title} />;
+
+  // useEffect를 사용하여 데이터 가져오기
+  useEffect(() => {
+    axios.get('https://my-json-server.typicode.com/typicode/demo/posts')
+    // axios.get('http://api.koreafilm.or.kr/openapi-data2/wisenut/search_api/search_json2.jsp?collection=kmdb_new2')
+      .then(function (response) {
+        setDatas(response.data); // 데이터를 상태로 설정
+        console.log(response.data);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  }, []); // 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때만 실행
 
   useFocusEffect(
     React.useCallback(() => {
@@ -23,14 +49,9 @@ const HomeScreen = () => {
         setImagePath({ uri: getImg });
         setUserName(getName);
       } else {
-        setImagePath(require('../assets/ic_launcher.png' ));
+        setImagePath(require('../assets/ic_launcher.png'));
         setUserName('NULL');
       }
-
-      // if (getImg == 'NULL') 
-      // } else {
-        
-      // }
 
       return () => {
         // 화면이 포커스를 잃을 때(clean-up) 실행될 작업
@@ -39,33 +60,24 @@ const HomeScreen = () => {
     }, [])
   );
 
-  // // axios로 데이터를 CRUD
-  // const getData = async () => {
-  //   let response = await axios.get('https://my-json-server.typicode.com/typicode/demo/posts');
-  //   // let response = await axios.get("https://fgmate.shop/app/users/login"); // 식상해 default url + 로그인
-  //   return response.data;
-  // };
-
-  // // GED한 데이터를 원하는 때에 뿌리기 위해 handling
-  // const handleData = (num: number) => {
-  //   getData().then((data) => {
-  //     if (data.length > num) {
-  //       const firstItemTitle = data[num].title;
-  //       setUserName(firstItemTitle);
-  //     } else {
-  //       console.log('no data');
-  //     }
-  //   })
-  // }
-
   // View 시작
   return (
     <styles.home>
       <styles.homeTitle>
         <styles.homeUserName>{userName + '님의 냉장고 목록' || '님의 냉장고 목록'}</styles.homeUserName>
-        <styles.homeUserImage source={imagePath} imageStyle={{ borderRadius: 50 }}/>
+        <styles.homeUserImage source={imagePath} imageStyle={{ borderRadius: 50 }} />
       </styles.homeTitle>
       <styles.homeBody>
+        <styles.homeListContainer>
+          <FlatList
+            data={datas}
+            renderItem={renderItem}
+            keyExtractor={item => item.id}
+          />
+        </styles.homeListContainer>
+        <styles.homeButton>
+          <MaterialCommunityIcons name='plus' color='#FFFFFF' size={28} />
+        </styles.homeButton>
       </styles.homeBody>
     </styles.home>
   );
