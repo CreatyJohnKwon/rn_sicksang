@@ -24,7 +24,7 @@ function MainScreen() {
                     tabBarInactiveTintColor: colors.lightgray,
                     tabBarLabelPosition: 'below-icon',
                     tabBarStyle: {
-                        height: 57.5,
+                        height: 56,
                     }
                 }}>
                 <Tab.Screen
