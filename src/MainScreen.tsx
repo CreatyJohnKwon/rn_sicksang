@@ -14,13 +14,14 @@ const Tab = createBottomTabNavigator();
 function MainScreen() {
 
     StatusBar.setBarStyle('dark-content');
-    StatusBar.setBackgroundColor(colors.lightgray);
+    StatusBar.setBackgroundColor(colors.transparent);
+    StatusBar.setTranslucent(true);
 
     useEffect(() => {
         try {
             setTimeout(() => {
               SplashScreen.hide();
-            }, 1000); //스플래시 활성화 시간 2초
+            }, 500);
           } catch (e) {
             console.log(e);
           }

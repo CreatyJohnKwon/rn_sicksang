@@ -13,7 +13,7 @@ const HomeStylist = {
     height: 10%;
     align-items: center;
     flex-direction: row;
-    margin-top: 15px;
+    margin-top: 42px;
     margin-start: 25px;
     margin-end: 20px;
     background-color: ${colors.transparent};
@@ -52,7 +52,7 @@ const HomeStylist = {
   homeListContainer: styled.SafeAreaView`
     margin-top: 10px;
   `,
-  homeListItem: styled.View`
+  homeListItem: styled.TouchableOpacity`
     height: 100px;
     background-color: ${colors.white};
     flex-direction: row;

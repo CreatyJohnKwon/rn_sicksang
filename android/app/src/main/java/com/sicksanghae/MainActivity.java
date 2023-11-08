@@ -14,7 +14,7 @@ public class MainActivity extends ReactActivity {
   //for splash screen
   @Override
   protected void onCreate(Bundle savedInstanceState) {
-    SplashScreen.show(this);
+    SplashScreen.show(this, true);
     super.onCreate(savedInstanceState);
   }
 

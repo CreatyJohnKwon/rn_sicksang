@@ -5,6 +5,7 @@
     <color name="colorAccent">#000000</color>
 
     <!-- 기본 -->
+    <color name="transparent">#00000000</color>
     <color name="white">#FFFFFF</color>
     <color name="black">#000000</color>
     <color name="naver">#2DB400</color>
