@@ -68,8 +68,12 @@ https://jiny-dongle.tistory.com/41
 3. RN - 반응형 레이아웃 짜기 (확장성을 위하여... 2023 11 03 )
 https://velog.io/@beanlove97/%EB%A6%AC%EC%95%A1%ED%8A%B8-%EB%84%A4%EC%9D%B4%ED%8B%B0%EB%B8%8C-%EB%B0%98%EC%9D%91%ED%98%95-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83
 
-4. RN 카카오 액세스 토큰 다루기 (2023 11 06)
+4-1. RN 카카오 액세스 토큰 다루기 (2023 11 06)
 https://github.com/crossplatformkorea/react-native-kakao-login
+
+4-2. RN 네이버 액세스 토큰 다루기 (2023 11 08)
+https://github.com/crossplatformkorea/react-native-naver-login
+https://velog.io/@pcsnms/Naver-Login
 
 5. 버튼에 대하여...
 https://hangjastar.tistory.com/28

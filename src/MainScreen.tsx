@@ -2,17 +2,25 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 import styles from './styles/stylist/Stylist';
-// import React, { lazy } from 'react';
 import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { StatusBar } from 'react-native';
 import colors from './styles/colors';
+// import SplashScreen from "react-native-splash-screen";
+// import { useEffect } from 'react'
 
 const Tab = createBottomTabNavigator();
 
 function MainScreen() {
+
     StatusBar.setBarStyle('dark-content');
     StatusBar.setBackgroundColor(colors.lightgray);
+
+    // useEffect(() => {
+    //     setTimeout(() => {
+    //       SplashScreen.hide();
+    //     }, 1000); //스플래시 활성화 시간
+    //   });
 
     return (
         <NavigationContainer>

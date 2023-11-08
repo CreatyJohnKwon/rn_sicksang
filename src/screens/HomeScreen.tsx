@@ -6,7 +6,7 @@ import storage from '../controller/Store'
 import { FlatList } from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
-/** FastList로 담길 아이템 */
+/** FlatList로 담길 아이템 */
 const Item = ({ title }: any) => (
   <styles.homeListItem>
     <styles.homeListImage source={require('../assets/ic_launcher.png')} imageStyle={{ borderRadius: 50 }} />

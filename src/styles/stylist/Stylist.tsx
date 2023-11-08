@@ -33,13 +33,25 @@ const Stylist = {
     padding: 5px;
     margin: 3px;
   `,
+  naverButtonText: styled.Text`
+  font-size: 20px;
+  font-weight: 600;
+  margin: 5px;
+  color: ${colors.white};
+`,
+  naverButton: styled.TouchableOpacity`
+  align-items: center;
+  background-color: ${colors.naver};
+  padding: 5px;
+  margin: 3px;
+`,
   tabBarIcon: styled.View`
     margin-top: 5px;
     background-color: ${colors.transparent};
   `,
   container: styled.SafeAreaView`
     flex: 1;
-    justify-content: center;
+    justify-content: space-evenly;
     align-items: center;
     top: 0;
     left: 0;

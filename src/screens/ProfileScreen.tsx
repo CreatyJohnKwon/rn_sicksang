@@ -1,17 +1,13 @@
-import React, { useState } from "react";
-import styles from '../styles/stylist/Stylist'
-import { KakaoOAuthToken, login, logout, KakaoProfile, getProfile } from '@react-native-seoul/kakao-login'
-import { useFocusEffect } from '@react-navigation/native'
-import storage from '../controller/Store'
+import styles from '../styles/stylist/Stylist';
+import { useCallback } from "react";
+import { useFocusEffect } from '@react-navigation/native';
+import { kakaoLogin, kakaoLogout } from "../logins/KakaoLogin";
+import { naverLogin, naverLogout } from '../logins/NaverLogin';
 
 const ProfileScreen = () => {
-  const [result, setResult] = useState('');
-  const [profileText, setProfileText] = useState('UserName');
-  const NICKNAME = "NICKNAMENICKNAMENICKNAMENICKNAME";
-  const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
 
   useFocusEffect(
-    React.useCallback(() => {
+    useCallback(() => {
       // 화면이 포커스될 때 실행될 작업
       console.log('Profile is focused');
 
@@ -22,49 +18,22 @@ const ProfileScreen = () => {
     }, [])
   );
 
-  const signInWithKakao = async (): Promise<void> => {
-    const token: KakaoOAuthToken = await login();
-
-    if (token != null) {
-      getKakaoProfile();
-    }
-
-    setResult(JSON.stringify(token.accessToken));
-  };
-
-  const signOutWithKakao = async (): Promise<void> => {
-    const message = await logout();
-
-    setProfileText('NULL'); // 프로필 결과를 상태로 설정
-    storage.setItem(NICKNAME, 'NULL');
-    storage.setItem(IMAGE, 'NULL');
-
-    setResult(message);
-  };
-
-  const getKakaoProfile = async (): Promise<void> => {
-    try {
-      const profile: KakaoProfile = await getProfile();
-      const nickname = profile.nickname;
-      const image = profile.profileImageUrl;
-      setProfileText(nickname); // 프로필 결과를 상태로 설정
-      storage.setItem(NICKNAME, nickname.toString());
-      storage.setItem(IMAGE, image.toString());
-    } catch (error) {
-      console.error('KAKAO ERROR:', error);
-    }
-  };
-
   return (
     <styles.profile>
-      <styles.text>{profileText}</styles.text>
-      <styles.kakaoButton onPress={signInWithKakao}>
-        <styles.kakaoButtonText>카카오 로그인</styles.kakaoButtonText>
-      </ styles.kakaoButton>
-      <styles.kakaoButton onPress={signOutWithKakao}>
-        <styles.kakaoButtonText>카카오 로그아웃</styles.kakaoButtonText>
-      </ styles.kakaoButton>
-      <styles.kakaoResult>{result}</styles.kakaoResult>
+      <styles.container>
+        <styles.kakaoButton onPress={kakaoLogin}>
+          <styles.kakaoButtonText>카카오 로그인</styles.kakaoButtonText>
+        </styles.kakaoButton>
+        <styles.kakaoButton onPress={kakaoLogout}>
+          <styles.kakaoButtonText>카카오 로그아웃</styles.kakaoButtonText>
+        </styles.kakaoButton>
+        <styles.naverButton onPress={naverLogin}>
+          <styles.naverButtonText>네이버 로그인</styles.naverButtonText>
+        </styles.naverButton>
+        <styles.naverButton onPress={naverLogout}>
+          <styles.naverButtonText>네이버 로그아웃</styles.naverButtonText>
+        </styles.naverButton>
+      </styles.container>
     </styles.profile>
   );
 };
