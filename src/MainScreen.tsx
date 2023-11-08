@@ -6,8 +6,8 @@ import HomeScreen from './screens/HomeScreen';
 import ProfileScreen from './screens/ProfileScreen';
 import { StatusBar } from 'react-native';
 import colors from './styles/colors';
-// import SplashScreen from "react-native-splash-screen";
-// import { useEffect } from 'react'
+import SplashScreen from "react-native-splash-screen";
+import { useEffect } from 'react'
 
 const Tab = createBottomTabNavigator();
 
@@ -16,11 +16,15 @@ function MainScreen() {
     StatusBar.setBarStyle('dark-content');
     StatusBar.setBackgroundColor(colors.lightgray);
 
-    // useEffect(() => {
-    //     setTimeout(() => {
-    //       SplashScreen.hide();
-    //     }, 1000); //스플래시 활성화 시간
-    //   });
+    useEffect(() => {
+        try {
+            setTimeout(() => {
+              SplashScreen.hide();
+            }, 1000); //스플래시 활성화 시간 2초
+          } catch (e) {
+            console.log(e);
+          }
+      });
 
     return (
         <NavigationContainer>

@@ -9,7 +9,7 @@ const Stylist = {
     align-items: center;
     background-color: ${colors.lightgray};
   `,
-  profileText: styled.Text`
+  text: styled.Text`
     font-size: 40px;
     font-weight: 600;
     margin-bottom: 50px;
