@@ -1,5 +1,5 @@
 // import { StyleSheet } from 'react-native';
-import colors from './colors'
+import colors from '../colors'
 import styled from '@emotion/native'
 
 const Stylist = {

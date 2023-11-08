@@ -1,4 +1,4 @@
-import styles from '../styles/HomeStylist';
+import styles from '../styles/stylist/HomeStylist';
 import axios from 'axios'
 import React, { useState, useEffect } from 'react';
 import { useFocusEffect } from '@react-navigation/native'

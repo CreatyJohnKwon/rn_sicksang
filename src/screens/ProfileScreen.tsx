@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from '../styles/Stylist'
+import styles from '../styles/stylist/Stylist'
 import { KakaoOAuthToken, login, logout, KakaoProfile, getProfile } from '@react-native-seoul/kakao-login'
 import { useFocusEffect } from '@react-navigation/native'
 import storage from '../controller/Store'
