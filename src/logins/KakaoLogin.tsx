@@ -4,7 +4,7 @@ import storage from '../controller/Store';
 const NICKNAME = "NICKNAMENICKNAMENICKNAMENICKNAME";
 const EMAIL = "1D5E84F66AA2EEG16EE53G33ASE00ES5E13";
 const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
-const KTOKEN = "KTOKENKTOKENKTOKENKTOKENKTOKENKTOKEN";
+const TOKEN = "TOKENTOKENTOKENTOKENTOKENTOKENTOKEN";
 
 export const kakaoLogin = async (): Promise<void> => {
 
@@ -16,9 +16,10 @@ export const kakaoLogin = async (): Promise<void> => {
 
         if (token != null) {
             getKakaoUserProfile();
-            storage.setItem(KTOKEN, token.toString());
+            storage.setItem(TOKEN, token.toString());
+            storage.setItem(TOKEN, token.accessToken ? token.accessToken.toString() : 'NULL');
         } else {
-            storage.setItem(KTOKEN, 'NULL');
+            storage.setItem(TOKEN, 'NULL');
         }
     } catch (e) {
         console.log(e);
@@ -32,6 +33,7 @@ export const kakaoLogout = async (): Promise<void> => {
         console.log(message);
         storage.setItem(NICKNAME, 'NULL');
         storage.setItem(IMAGE, 'NULL');
+        storage.setItem(TOKEN, 'NULL');
     } catch (e) {
         console.log(e);
     }

@@ -9,7 +9,7 @@ const serviceUrlScheme = 'navertest'; // only for iOS
 const NICKNAME = "NICKNAMENICKNAMENICKNAMENICKNAME";
 const EMAIL = "1D5E84F66AA2EEG16EE53G33ASE00ES5E13";
 const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
-const NTOKEN = "KTOKENKTOKENKTOKENKTOKENKTOKENKTOKEN";
+const TOKEN = "TOKENTOKENTOKENTOKENTOKENTOKENTOKEN";
 
 export const naverLogin = async (): Promise<void> => {
     try {
@@ -23,10 +23,10 @@ export const naverLogin = async (): Promise<void> => {
 
         if (token != null) {
             getNaverUserProfile(token);
-            storage.setItem(NTOKEN, token.toString());
+            storage.setItem(TOKEN, successResponse?.accessToken ? successResponse?.accessToken.toString() : 'NULL');
             console.log(successResponse?.accessToken);
         } else {
-            storage.setItem(NTOKEN, 'NULL');
+            storage.setItem(TOKEN, 'NULL');
             console.log(failureResponse?.message);
         }
     } catch (e) {
@@ -41,6 +41,7 @@ export const naverLogout = async (): Promise<void> => {
         storage.setItem(NICKNAME, 'NULL');
         storage.setItem(EMAIL, 'NULL');
         storage.setItem(IMAGE, 'NULL');
+        storage.setItem(TOKEN, 'NULL');
     } catch (e) {
         console.error(e);
     }
