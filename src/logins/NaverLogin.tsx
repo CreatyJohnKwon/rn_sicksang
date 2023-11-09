@@ -42,6 +42,7 @@ export const naverLogout = async (): Promise<void> => {
         storage.setItem(EMAIL, 'NULL');
         storage.setItem(IMAGE, 'NULL');
         storage.setItem(TOKEN, 'NULL');
+        //TODO 로그인 화면으로 이동하기 위해 앱 재시작
     } catch (e) {
         console.error(e);
     }

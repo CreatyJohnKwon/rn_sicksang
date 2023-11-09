@@ -91,6 +91,9 @@ https://yuddomack.tistory.com/entry/5React-Native-%EB%A0%88%EC%9D%B4%EC%95%84%EC
 9. RN-SectionList 사용하기 (1106)
 https://velog.io/@jt_include_rw/React-Native-SectionList-to-FlashList
 
+10. RN props drilling 현상 막기 (1109)
+https://velog.io/@fejigu/React-Native-props-drilling-%EB%A7%89%EB%8A%94-%EB%B0%A9%EB%B2%95-Context
+
 ==================================( 공식 문서 )========================================
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).

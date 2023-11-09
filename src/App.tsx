@@ -6,6 +6,9 @@ import AuthStack from './navigations/AuthStack';
 import MainStack from './navigations/MainStack';
 import colors from './styles/colors'
 import UserContext from './contexts/userContent';
+import storage from './controller/Store';
+
+const TOKEN = "TOKENTOKENTOKENTOKENTOKENTOKENTOKEN";
 
 const App = () => {
     const [user, setUser] = useState<null | any>(null);
@@ -14,9 +17,13 @@ const App = () => {
     StatusBar.setBackgroundColor(colors.transparent);
     StatusBar.setTranslucent(true);
 
+    const storageResult = storage.getItem(TOKEN);
+    
     useEffect(() => {
         try {
             setTimeout(() => {
+                setUser(storageResult);
+                console.log(storageResult);
                 SplashScreen.hide(); // splashscreen 닫고
             }, 1000);
         } catch (e) {
@@ -27,7 +34,7 @@ const App = () => {
     return (
         <UserContext.Provider value={{ setUser }}>
             <NavigationContainer>
-                {user ? <MainStack /> : <AuthStack />}
+                {user != 'NULL' ? <MainStack /> : <AuthStack />}
             </NavigationContainer>
         </UserContext.Provider>
     );
