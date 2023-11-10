@@ -4,7 +4,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import { kakaoLogout } from "../logins/KakaoLogin";
 import { naverLogout } from '../logins/NaverLogin';
 
-const ProfileScreen = () => {
+const ProfileScreen = ({navigation}: any) => {
 
   useFocusEffect(
     useCallback(() => {
@@ -18,13 +18,43 @@ const ProfileScreen = () => {
     }, [])
   );
 
+  async function isKakaoLogout() {
+    try {
+      const loginResult: boolean = await kakaoLogout();
+
+      if (loginResult) {
+        console.log("Kakao logout successful!");
+        navigation.navigate('Login');
+      } else {
+        console.log("Kakao logout failed!");
+      }
+    } catch (error) {
+      console.error("An error occurred during Kakao login:", error);
+    }
+  }
+
+  async function isNaverLogout() {
+    try {
+      const loginResult: boolean = await naverLogout();
+
+      if (loginResult) {
+        console.log("Naver logout successful!");
+        navigation.navigate('Login');
+      } else {
+        console.log("Naver logout failed!");
+      }
+    } catch (error) {
+      console.error("An error occurred during Naver login:", error);
+    }
+  }
+
   return (
     <styles.profile>
       <styles.profileContainer>
-        <styles.kakaoButton onPress={kakaoLogout}>
+        <styles.kakaoButton onPress={isKakaoLogout}>
           <styles.kakaoButtonText>카카오 로그아웃</styles.kakaoButtonText>
         </styles.kakaoButton>
-        <styles.naverButton onPress={naverLogout}>
+        <styles.naverButton onPress={isNaverLogout}>
           <styles.naverButtonText>네이버 로그아웃</styles.naverButtonText>
         </styles.naverButton>
       </styles.profileContainer>

@@ -11,7 +11,7 @@ const EMAIL = "1D5E84F66AA2EEG16EE53G33ASE00ES5E13";
 const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
 const TOKEN = "TOKENTOKENTOKENTOKENTOKENTOKENTOKEN";
 
-export const naverLogin = async (): Promise<void> => {
+export const naverLogin = async (): Promise<boolean> => {
     try {
         const { failureResponse, successResponse } = await NaverLogin.login({
             appName,
@@ -22,19 +22,22 @@ export const naverLogin = async (): Promise<void> => {
         const token = successResponse?.accessToken;
 
         if (token != null) {
-            getNaverUserProfile(token);
+            await getNaverUserProfile(token);
             storage.setItem(TOKEN, successResponse?.accessToken ? successResponse?.accessToken.toString() : 'NULL');
             console.log(successResponse?.accessToken);
+            return true;
         } else {
             storage.setItem(TOKEN, 'NULL');
             console.log(failureResponse?.message);
+            return false;
         }
     } catch (e) {
         console.log(e);
+        return false;
     }
 };
 
-export const naverLogout = async (): Promise<void> => {
+export const naverLogout = async (): Promise<boolean> => {
     try {
         await NaverLogin.logout();
         console.log(NaverLogin.logout.name);
@@ -42,9 +45,9 @@ export const naverLogout = async (): Promise<void> => {
         storage.setItem(EMAIL, 'NULL');
         storage.setItem(IMAGE, 'NULL');
         storage.setItem(TOKEN, 'NULL');
-        //TODO 로그인 화면으로 이동하기 위해 앱 재시작
+        return true;
     } catch (e) {
-        console.error(e);
+        return false;
     }
 };
 

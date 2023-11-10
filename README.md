@@ -94,6 +94,9 @@ https://velog.io/@jt_include_rw/React-Native-SectionList-to-FlashList
 10. RN props drilling 현상 막기 (1109)
 https://velog.io/@fejigu/React-Native-props-drilling-%EB%A7%89%EB%8A%94-%EB%B0%A9%EB%B2%95-Context
 
+11. 페이지 이동하고 관리하기 (1110)
+https://adjh54.tistory.com/202
+
 ==================================( 공식 문서 )========================================
 
 This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).

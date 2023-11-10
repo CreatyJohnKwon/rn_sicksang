@@ -6,27 +6,27 @@ const EMAIL = "1D5E84F66AA2EEG16EE53G33ASE00ES5E13";
 const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
 const TOKEN = "TOKENTOKENTOKENTOKENTOKENTOKENTOKEN";
 
-export const kakaoLogin = async (): Promise<void> => {
+export const kakaoLogin = async (): Promise<boolean> => {
 
     try {
         // Kakao 로그인 처리
         const token: KakaoOAuthToken = await login();
 
-        console.log(token.accessToken.toString());
-
         if (token != null) {
-            getKakaoUserProfile();
-            storage.setItem(TOKEN, token.toString());
             storage.setItem(TOKEN, token.accessToken ? token.accessToken.toString() : 'NULL');
+            await getKakaoUserProfile();
+            return true;
         } else {
             storage.setItem(TOKEN, 'NULL');
+            return false;
         }
     } catch (e) {
         console.log(e);
+        return false;
     }
 };
 
-export const kakaoLogout = async (): Promise<void> => {
+export const kakaoLogout = async (): Promise<boolean> => {
     try {
         // Kakao 로그아웃 처리
         const message = await logout();
@@ -34,9 +34,10 @@ export const kakaoLogout = async (): Promise<void> => {
         storage.setItem(NICKNAME, 'NULL');
         storage.setItem(IMAGE, 'NULL');
         storage.setItem(TOKEN, 'NULL');
-        //TODO 로그인 화면으로 이동하기 위해 앱 재시작
+        return true;
     } catch (e) {
         console.log(e);
+        return false;
     }
 };
 

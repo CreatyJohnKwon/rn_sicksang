@@ -5,6 +5,7 @@ import { useFocusEffect } from '@react-navigation/native'
 import storage from '../controller/Store'
 import { FlatList } from 'react-native'
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
+import Splash from '../controller/Indicators'; 
 
 /** FlatList로 담길 아이템 */
 const Item = ({ title }: any) => (
@@ -14,13 +15,14 @@ const Item = ({ title }: any) => (
   </styles.homeListItem>
 );
 
+const NICKNAME = "NICKNAMENICKNAMENICKNAMENICKNAME";
+const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
+
 const HomeScreen = () => {
-  const [userName, setUserName] = useState('');
+  const [splash, setSplash] = useState<any>(null);
+  const [userName, setUserName] = useState('NULL');
   const [imagePath, setImagePath] = useState(require('../assets/ic_launcher.png')); // 초기 이미지 설정
   const [datas, setDatas] = useState();
-
-  const NICKNAME = "NICKNAMENICKNAMENICKNAMENICKNAME";
-  const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
 
   const renderItem = ({ item }: any) => <Item title={item.title} />;
 
@@ -36,14 +38,16 @@ const HomeScreen = () => {
         console.log(error);
       });
   }, []); // 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때만 실행
+  
 
   useFocusEffect(
     React.useCallback(() => {
       // 화면이 포커스될 때 실행될 작업
+      setSplash(true);
       console.log('Home is focused');
 
-      const getName = storage.getItem(NICKNAME)?.toString();
-      const getImg = storage.getItem(IMAGE)?.toString();
+      const getName = storage.getItem(NICKNAME)?.toString() || 'NULL';
+      const getImg = storage.getItem(IMAGE)?.toString() || 'NULL';
 
       if (getName && getImg != 'NULL') {
         setImagePath({ uri: getImg });
@@ -52,7 +56,7 @@ const HomeScreen = () => {
         setImagePath(require('../assets/ic_launcher.png'));
         setUserName('NULL');
       }
-
+      setSplash(false);
       return () => {
         // 화면이 포커스를 잃을 때(clean-up) 실행될 작업
         console.log('Home is unfocused');
@@ -79,6 +83,7 @@ const HomeScreen = () => {
           <MaterialCommunityIcons name='plus' color='#FFFFFF' size={28} />
         </styles.homeButton>
       </styles.homeBody>
+      {splash && <Splash />}
     </styles.home>
   );
 };

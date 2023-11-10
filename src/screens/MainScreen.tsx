@@ -1,14 +1,13 @@
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
-import ProfileScreen from '../screens/ProfileScreen';
-import HomeScreen from '../screens/HomeScreen';
+import ProfileScreen from './ProfileScreen';
+import HomeScreen from './HomeScreen';
 import styles from '../styles/stylist/Stylist';
 import colors from '../styles/colors';
 import MaterialCommunityIcons from 'react-native-vector-icons/MaterialCommunityIcons';
 
 const Tab = createBottomTabNavigator();
 
-function MainStack() {
-
+const MainScreen = ({ navigation }: any) => {
   return (
     <Tab.Navigator
       initialRouteName="Home"
@@ -65,4 +64,4 @@ function MainStack() {
   );
 }
 
-export default MainStack;
+export default MainScreen;

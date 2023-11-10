@@ -3,7 +3,7 @@ import colors from '../colors'
 import styled from '@emotion/native'
 
 const HomeStylist = {
-  home: styled.View`
+  home: styled.SafeAreaView`
     height: 100%;
     width: 100%;
     align-items: stretch;

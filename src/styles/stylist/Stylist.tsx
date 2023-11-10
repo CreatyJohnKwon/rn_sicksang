@@ -15,36 +15,6 @@ const Stylist = {
     margin-bottom: 50px;
     color: ${colors.black};
   `,
-  kakaoResult: styled.Text`
-    font-size: 15px;
-    font-weight: 600;
-    margin: 15px;
-    color: ${colors.gray};
-  `,
-  kakaoButtonText: styled.Text`
-    font-size: 20px;
-    font-weight: 600;
-    margin: 5px;
-    color: ${colors.white};
-  `,
-  kakaoButton: styled.TouchableOpacity`
-    align-items: center;
-    background-color: ${colors.kakao};
-    padding: 5px;
-    margin: 3px;
-  `,
-  naverButtonText: styled.Text`
-  font-size: 20px;
-  font-weight: 600;
-  margin: 5px;
-  color: ${colors.white};
-`,
-  naverButton: styled.TouchableOpacity`
-  align-items: center;
-  background-color: ${colors.naver};
-  padding: 5px;
-  margin: 3px;
-`,
   tabBarIcon: styled.View`
     margin-top: 5px;
     background-color: ${colors.transparent};
@@ -57,6 +27,16 @@ const Stylist = {
     left: 0;
     right: 0;
     bottom: 0;
+  `,
+  indicator: styled.SafeAreaView`
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    right: 0px; 
+    bottom: 0px; 
+    align-items: center; 
+    justify-content: center; 
+    background-color: rgba(0, 0, 0, 0.5);
   `,
 };
 
