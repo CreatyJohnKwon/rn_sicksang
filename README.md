@@ -14,6 +14,9 @@ Status Manage Library : Zustand<br/>
 1. Icons
 https://github.com/oblador/react-native-vector-icons
 
+2. npm 모듈 공사
+https://www.npmjs.com/package
+
 ============================================<br/>
 
 0. react-native 에러 대응 꿀팁 -1
@@ -94,6 +97,13 @@ https://velog.io/@fejigu/React-Native-props-drilling-%EB%A7%89%EB%8A%94-%EB%B0%A
 
 11. 페이지 이동하고 관리하기 (1110)
 https://adjh54.tistory.com/202
+
+12. Toast메시지 띄우기 (1114)
+https://adjh54.tistory.com/238
+https://jineecode.tistory.com/263
+
+13. Bottom Sheet 제작하기 <라이브러리 없이> (1114)
+https://coding-w00se.tistory.com/33
 
 ===============( 공식 문서 )===============<br/>
 
