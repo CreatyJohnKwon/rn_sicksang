@@ -9,13 +9,12 @@ openssl : 3.0.10+quic<br/>
 Api Library : axios<br/>
 Status Manage Library : Zustand<br/>
 
-=========================================<br/>
-공식 사이트<br/>
+===============( 공식 사이트 )===============<br/>
 
 1. Icons
 https://github.com/oblador/react-native-vector-icons
 
-=========================================<br/>
+============================================<br/>
 
 0. react-native 에러 대응 꿀팁 -1
 https://velog.io/@badbeoti/%EB%B2%84%EA%B7%B8%EB%8D%A9%EC%96%B4%EB%A6%AC-react-native-%EC%97%90%EB%9F%AC-%EB%8C%80%EC%9D%91-%EA%BF%80%ED%8C%81-1
@@ -56,9 +55,8 @@ https://stackoverflow.com/questions/62937553/no-apps-connected-sending-reload-to
 10. 예비 이슈 해결
 https://froggydisk.github.io/27th-post/
 
-===========================<br/>
-본격적 개발 시작<br/>
----------------------------<br/>
+===============( 본격 개발 시작 )===============<br/>
+
 1. 상태 바에 스타일을 적용해보자 ( 2023 11 02 )
 https://velog.io/@ttoottie/RN-Status-Bar%EC%97%90-%EC%8A%A4%ED%83%80%EC%9D%BC%EC%9D%84-%EC%A0%81%EC%9A%A9%ED%95%B4%EB%B3%B4%EC%9E%90-9xp185ny
 
