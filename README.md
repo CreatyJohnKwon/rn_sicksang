@@ -1,13 +1,13 @@
 
 <My Version>
-JDK : 17
-Android Max : 33
-Android Min : 21
-RN(React-native) : 0.72.6
-Node.js/Npm : 18.18.0 / 9.8.1
-openssl : 3.0.10+quic
-Api Library : axios
-Status Manage Library : Zustand
+JDK : 17<br/>
+Android Max : 33<br/>
+Android Min : 21<br/>
+RN(React-native) : 0.72.6<br/>
+Node.js/Npm : 18.18.0 / 9.8.1<br/>
+openssl : 3.0.10+quic<br/>
+Api Library : axios<br/>
+Status Manage Library : Zustand<br/>
 
 =========================================
 공식 사이트
