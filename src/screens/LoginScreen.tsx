@@ -1,50 +1,26 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from '../styles/stylist/LoginStylist';
-import { kakaoLogin } from "../logins/KakaoLogin";
-import { naverLogin } from '../logins/NaverLogin';
+import BottomSheet from './BottomSheet';
 
-const LoginScreen = ({ navigation }: any) => {
-
-  async function isKakaoLogin() {
-    try {
-      const loginResult: boolean = await kakaoLogin();
-
-      if (loginResult) {
-        console.log("Kakao login successful!");
-        navigation.navigate('Main');
-      } else {
-        console.log("Kakao login failed!");
-      }
-    } catch (error) {
-      console.error("An error occurred during Kakao login:", error);
-    }
-  }
-
-  async function isNaverLogin() {
-    try {
-      const loginResult: boolean = await naverLogin();
-
-      if (loginResult) {
-        console.log("Naver login successful!");
-        navigation.navigate('Main');
-      } else {
-        console.log("Naver login failed!");
-      }
-    } catch (error) {
-      console.error("An error occurred during Naver login:", error);
-    }
+const LoginScreen = (props: any) => {
+  const [modalVisible, setModalVisible] = useState(false);
+  const pressButton = () => {
+    setModalVisible(true);
   }
 
   return (
     <styles.loginScreen>
-      <styles.loginContainer>
-        <styles.kakaoButton onPress={isKakaoLogin}>
-          <styles.kakaoButtonText>카카오 로그인</styles.kakaoButtonText>
-        </styles.kakaoButton>
-        <styles.naverButton onPress={isNaverLogin}>
-          <styles.naverButtonText>네이버 로그인</styles.naverButtonText>
-        </styles.naverButton>
-      </styles.loginContainer>
+      <styles.loginContainer1st>
+        <styles.refrigeImage source={require('../assets/ic_launcher.png')} />
+        <styles.refrigeTitle>우리들의 안전한 냉장고</styles.refrigeTitle>
+        <styles.refrigeInfo>식상해</styles.refrigeInfo>
+      </styles.loginContainer1st>
+      <styles.loginContainer2nd>
+        <styles.loginButton onPress={pressButton}>
+          <styles.buttonsText>로그인</styles.buttonsText>
+        </styles.loginButton>
+      </styles.loginContainer2nd>
+      <BottomSheet navigation={props.navigation} modalVisible={modalVisible} setModalVisible={setModalVisible} />
     </styles.loginScreen>
   );
 };

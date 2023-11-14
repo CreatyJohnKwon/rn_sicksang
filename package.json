@@ -22,6 +22,7 @@
     "@react-navigation/native": "^6.1.9",
     "@react-navigation/native-stack": "^6.9.17",
     "@react-navigation/stack": "^6.3.20",
+    "@remobile/react-native-toast": "^1.0.7",
     "@types/styled-components-react-native": "^5.2.4",
     "axios": "^1.6.0",
     "expo-font": "~11.4.0",
@@ -42,6 +43,7 @@
     "react-native-screens": "^3.27.0",
     "react-native-simple-modal": "^9.0.1",
     "react-native-splash-screen": "^3.3.0",
+    "react-native-toast-message": "^2.1.7",
     "react-native-vector-icons": "^10.0.1",
     "styled-components": "^6.1.0",
     "zustand": "^4.4.6"

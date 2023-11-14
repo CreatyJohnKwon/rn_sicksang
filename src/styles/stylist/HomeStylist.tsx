@@ -39,6 +39,7 @@ const HomeStylist = {
     width: 48px;
     height: 48px;
   `,
+  homeTouchableImage: styled.TouchableOpacity``,
   homeButton: styled.TouchableOpacity`
     height: 70px;
     align-items: center;

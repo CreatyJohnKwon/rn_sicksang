@@ -1,47 +1,99 @@
 // import { StyleSheet } from 'react-native';
-import colors from '../colors'
-import styled from '@emotion/native'
+import colors from '../colors';
+import styled from '@emotion/native';
+import { StyleSheet } from 'react-native';
 
 const Stylist = {
   loginScreen: styled.View`
     flex: 1;
     justify-content: center;
     align-items: center;
-    background-color: ${colors.lightgray};
+    background-color: ${colors.gray};
   `,
-  kakaoButtonText: styled.Text`
-    font-size: 20px;
-    font-weight: 600;
+  loginContainer1st: styled.SafeAreaView`
+    height: 80%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: ${colors.white};
+  `,
+  loginContainer2nd: styled.SafeAreaView`
+    height: 20%;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+    background-color: ${colors.white};
+  `,
+  buttonsText: styled.Text`
+    font-size: 18px;
+    font-weight: bold;
     margin: 5px;
     color: ${colors.white};
+  `,
+  loginButton: styled.TouchableOpacity`
+    width: 90%;
+    align-items: center;
+    background-color: ${colors.black};
+    border-radius: 10px;
+    padding: 7px;
+    margin: 3.5px;
   `,
   kakaoButton: styled.TouchableOpacity`
+    width: 90%;
     align-items: center;
     background-color: ${colors.kakao};
-    padding: 5px;
-    margin: 3px;
-  `,
-  naverButtonText: styled.Text`
-    font-size: 20px;
-    font-weight: 600;
-    margin: 5px;
-    color: ${colors.white};
+    border-radius: 10px;
+    padding: 7px;
+    margin: 3.5px;
   `,
   naverButton: styled.TouchableOpacity`
+    width: 90%;
     align-items: center;
     background-color: ${colors.naver};
-    padding: 5px;
-    margin: 3px;
+    border-radius: 10px;
+    padding: 7px;
+    margin: 3.5px;
   `,
-  loginContainer: styled.SafeAreaView`
-    flex: 1;
-    justify-content: space-evenly;
+  newClientButtonText: styled.Text`
+    font-size: 12px;
+    font-weight: bold;
+    margin: 5px;
+    color: ${colors.gray};
+    border-bottom-width: 1px;
+    border-bottom-color: ${colors.gray};
+  `,
+  newClientButton: styled.TouchableOpacity`
     align-items: center;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
+    background-color: ${colors.transparent};
+    padding: 7px;
+    margin: 3.5px;
   `,
-};
-
+  refrigeImage: styled.ImageBackground`
+    height: 200px;
+    width: 200px;
+    background-color: ${colors.transparent};
+  `,
+  refrigeTitle: styled.Text`
+    font-size: 15px;
+    font-weight: bold;
+    margin: 5px;
+    color: ${colors.black};
+  `,
+  refrigeInfo: styled.Text`
+    font-size: 35px;
+    font-weight: bold;
+    top: 3px;
+    color: ${colors.black};
+  `,
+  bottomOverlay: styled.View`
+    flex: 1;
+    justify-content: flex-end;
+    background-color: rgba(0, 0, 0, 0.4);
+  `,
+  bottomBackground: styled.View`
+    flex: 1;
+  `,
+  bottomTouch: styled.TouchableNativeFeedback``,
+}
 export default Stylist;

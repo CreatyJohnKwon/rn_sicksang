@@ -10,5 +10,6 @@ export declare module CommonType {
         Main: undefined;
         Login: undefined;
         Home: undefined;
+        Profile: undefined;
     };
 };

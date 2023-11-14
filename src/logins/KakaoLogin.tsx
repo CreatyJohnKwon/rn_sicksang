@@ -15,6 +15,7 @@ export const kakaoLogin = async (): Promise<boolean> => {
         if (token != null) {
             storage.setItem(TOKEN, token.accessToken ? token.accessToken.toString() : 'NULL');
             await getKakaoUserProfile();
+            console.log(token.accessToken);
             return true;
         } else {
             storage.setItem(TOKEN, 'NULL');

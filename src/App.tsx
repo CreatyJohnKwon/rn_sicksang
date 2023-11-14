@@ -1,6 +1,6 @@
-import StackNavigation from './navigations/StackNavigation'
+import StackNavigation from './navigations/StackNavigation';
 
-const App = () => {
+const App = ({props}: any) => {
     return (
         <StackNavigation />
     );

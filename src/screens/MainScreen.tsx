@@ -31,7 +31,7 @@ const MainScreen = ({ navigation }: any) => {
                 name={focused ? 'home-circle' : 'home-circle-outline'}
                 color={color}
                 size={24} />
-            </styles.tabBarIcon>
+            </styles.tabBarIcon>            
           ),
           tabBarLabelStyle: {
             fontSize: 15,

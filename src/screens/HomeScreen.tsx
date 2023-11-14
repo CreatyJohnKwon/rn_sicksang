@@ -18,13 +18,17 @@ const Item = ({ title }: any) => (
 const NICKNAME = "NICKNAMENICKNAMENICKNAMENICKNAME";
 const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
 
-const HomeScreen = () => {
+const HomeScreen = ({navigation}: any) => {
   const [splash, setSplash] = useState<any>(null);
   const [userName, setUserName] = useState('NULL');
   const [imagePath, setImagePath] = useState(require('../assets/ic_launcher.png')); // 초기 이미지 설정
   const [datas, setDatas] = useState();
 
   const renderItem = ({ item }: any) => <Item title={item.title} />;
+
+  const handleImagePress = () => {
+    navigation.navigate('Profile');
+  }
 
   // useEffect를 사용하여 데이터 가져오기
   useEffect(() => {
@@ -36,9 +40,9 @@ const HomeScreen = () => {
       })
       .catch(function (error) {
         console.log(error);
-      });
+      })
   }, []); // 빈 배열을 전달하여 컴포넌트가 처음 렌더링될 때만 실행
-  
+
 
   useFocusEffect(
     React.useCallback(() => {
@@ -52,11 +56,13 @@ const HomeScreen = () => {
       if (getName && getImg != 'NULL') {
         setImagePath({ uri: getImg });
         setUserName(getName);
+        setSplash(false);
       } else {
         setImagePath(require('../assets/ic_launcher.png'));
         setUserName('NULL');
+        setSplash(false);
       }
-      setSplash(false);
+
       return () => {
         // 화면이 포커스를 잃을 때(clean-up) 실행될 작업
         console.log('Home is unfocused');
@@ -69,7 +75,9 @@ const HomeScreen = () => {
     <styles.home>
       <styles.homeTitle>
         <styles.homeUserName>{userName + '님의 냉장고 목록' || '님의 냉장고 목록'}</styles.homeUserName>
-        <styles.homeUserImage source={imagePath} imageStyle={{ borderRadius: 50 }} />
+        <styles.homeTouchableImage onPress={handleImagePress}>
+            <styles.homeUserImage source={imagePath} imageStyle={{ borderRadius: 50 }} />
+        </styles.homeTouchableImage>
       </styles.homeTitle>
       <styles.homeBody>
         <styles.homeListContainer>

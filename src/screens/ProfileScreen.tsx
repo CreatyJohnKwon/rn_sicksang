@@ -4,7 +4,7 @@ import { useFocusEffect } from '@react-navigation/native';
 import { kakaoLogout } from "../logins/KakaoLogin";
 import { naverLogout } from '../logins/NaverLogin';
 
-const ProfileScreen = ({navigation}: any) => {
+const ProfileScreen = ({ navigation }: any) => {
 
   useFocusEffect(
     useCallback(() => {
@@ -24,7 +24,11 @@ const ProfileScreen = ({navigation}: any) => {
 
       if (loginResult) {
         console.log("Kakao logout successful!");
-        navigation.navigate('Login');
+        // 로그아웃하면서 이전 화면 스택 모두 초기화
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Login' }],
+        });
       } else {
         console.log("Kakao logout failed!");
       }
@@ -39,7 +43,11 @@ const ProfileScreen = ({navigation}: any) => {
 
       if (loginResult) {
         console.log("Naver logout successful!");
-        navigation.navigate('Login');
+        // 로그아웃하면서 이전 화면 스택 모두 초기화
+        navigation.reset({
+          index: 0,
+          routes: [{ name: 'Login' }],
+        });
       } else {
         console.log("Naver logout failed!");
       }
@@ -59,7 +67,7 @@ const ProfileScreen = ({navigation}: any) => {
         </styles.naverButton>
       </styles.profileContainer>
     </styles.profile>
-  );
+  )
 };
 
 export default ProfileScreen;
