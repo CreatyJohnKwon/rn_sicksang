@@ -5,6 +5,7 @@ const NICKNAME = "NICKNAMENICKNAMENICKNAMENICKNAME";
 const EMAIL = "1D5E84F66AA2EEG16EE53G33ASE00ES5E13";
 const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
 const TOKEN = "TOKENTOKENTOKENTOKENTOKENTOKENTOKEN";
+const LOGINFO: string = "loginStyleloginStyleloginStyleloginStyle";
 
 export const kakaoLogin = async (): Promise<boolean> => {
 
@@ -35,6 +36,7 @@ export const kakaoLogout = async (): Promise<boolean> => {
         storage.setItem(NICKNAME, 'NULL');
         storage.setItem(IMAGE, 'NULL');
         storage.setItem(TOKEN, 'NULL');
+        storage.setItem(LOGINFO, 'NULL');
         return true;
     } catch (e) {
         console.log(e);
@@ -52,6 +54,7 @@ export const getKakaoUserProfile = async (): Promise<void> => {
         storage.setItem(NICKNAME, nickname ? nickname.toString() : 'NULL');
         storage.setItem(EMAIL, email ? email.toString() : 'NULL');
         storage.setItem(IMAGE, image ? image.toString() : 'NULL');
+        storage.setItem(LOGINFO, 'KAKAO');
         console.log('nickname: ' + nickname + '\temail: ' + email + '\timage: ' + image);
     } catch (error) {
         console.error('KAKAO ERROR:', error);

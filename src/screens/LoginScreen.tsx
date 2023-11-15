@@ -12,8 +12,8 @@ const LoginScreen = (props: any) => {
     <styles.loginScreen>
       <styles.loginContainer1st>
         <styles.refrigeImage source={require('../assets/ic_launcher.png')} />
-        <styles.refrigeTitle>우리들의 안전한 냉장고</styles.refrigeTitle>
-        <styles.refrigeInfo>식상해</styles.refrigeInfo>
+        <styles.refrigeInfo>우리들의 안전한 냉장고</styles.refrigeInfo>
+        <styles.refrigeTitle>식상해</styles.refrigeTitle>
       </styles.loginContainer1st>
       <styles.loginContainer2nd>
         <styles.loginButton onPress={pressButton}>

@@ -76,20 +76,20 @@ https://github.com/crossplatformkorea/react-native-kakao-login
 https://github.com/crossplatformkorea/react-native-naver-login
 https://velog.io/@pcsnms/Naver-Login
 
-5. 버튼에 대하여...
+5. 버튼에 대하여... (2023 11 06)
 https://hangjastar.tistory.com/28
 
-6. ReactNative Paper 사용하기
+6. ReactNative Paper 사용하기 (2023 11 06)
 https://ccusean.tistory.com/entry/React-Native-UI-Components-Library-Top-3
 
-7. axios를 사용하여 RestAPI 연동하기
+7. axios를 사용하여 RestAPI 연동하기 (2023 11 07)
 https://initstory.tistory.com/61#google_vignette
 
-8. 요소의 배치와 정렬 / 레이아웃 디자인
+8. 요소의 배치와 정렬 / 레이아웃 디자인 (2023 11 07)
 https://velog.io/@wook4506/React-Native-%EC%9A%94%EC%86%8C%EC%9D%98-%EB%B0%B0%EC%B9%98%EC%99%80-%EC%A0%95%EB%A0%AC
 https://yuddomack.tistory.com/entry/5React-Native-%EB%A0%88%EC%9D%B4%EC%95%84%EC%9B%83-%EB%94%94%EC%9E%90%EC%9D%B8-1%EB%B6%80-flex%EC%99%80-width-height
 
-9. RN-SectionList 사용하기 (1106)
+9. RN-SectionList 사용하기 (1109)
 https://velog.io/@jt_include_rw/React-Native-SectionList-to-FlashList
 
 10. RN props drilling 현상 막기 (1109)
@@ -104,6 +104,9 @@ https://jineecode.tistory.com/263
 
 13. Bottom Sheet 제작하기 <라이브러리 없이> (1114)
 https://coding-w00se.tistory.com/33
+
+14. RN - Ui에 더 깊숙히 알다 (1115)
+https://velog.io/@rudans987/RN-UI
 
 ===============( 공식 문서 )===============<br/>
 

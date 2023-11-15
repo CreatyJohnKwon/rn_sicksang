@@ -10,6 +10,7 @@ const NICKNAME = "NICKNAMENICKNAMENICKNAMENICKNAME";
 const EMAIL = "1D5E84F66AA2EEG16EE53G33ASE00ES5E13";
 const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
 const TOKEN = "TOKENTOKENTOKENTOKENTOKENTOKENTOKEN";
+const LOGINFO: string = "loginStyleloginStyleloginStyleloginStyle";
 
 export const naverLogin = async (): Promise<boolean> => {
     try {
@@ -45,6 +46,7 @@ export const naverLogout = async (): Promise<boolean> => {
         storage.setItem(EMAIL, 'NULL');
         storage.setItem(IMAGE, 'NULL');
         storage.setItem(TOKEN, 'NULL');
+        storage.setItem(LOGINFO, 'NULL');
         return true;
     } catch (e) {
         return false;
@@ -60,6 +62,7 @@ export const getNaverUserProfile = async (token: string): Promise<void> => {
         storage.setItem(NICKNAME, nickname ? nickname : 'NULL');
         storage.setItem(EMAIL, email ? email : 'NULL');
         storage.setItem(IMAGE, image ? image : 'NULL');
+        storage.setItem(LOGINFO, 'NAVER');
         console.log('nickname: ' + nickname + '\temail: ' + email + '\timage: ' + image);
     } catch (e) {
         console.log(e);

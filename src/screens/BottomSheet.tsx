@@ -51,6 +51,8 @@ const BottomSheet = (props: any) => {
     useEffect(() => {
         if (props.modalVisible) {
             resetBottomSheet.start();
+        } else {
+            closeBottomSheet.start();
         }
     }, [props.modalVisible]);
 
@@ -70,6 +72,7 @@ const BottomSheet = (props: any) => {
                     text1: '카카오 로그인 성공!',
                     visibilityTime: 1500,
                     onHide: async () => {
+                        closeBottomSheet.start();
                         props.navigation.navigate('Main');
                     },
                 });
@@ -79,9 +82,6 @@ const BottomSheet = (props: any) => {
                     type: 'error',
                     text1: '카카오 로그인 실패: 404',
                     visibilityTime: 1500,
-                    onHide: async () => {
-                        props.navigation.navigate('Main');
-                    },
                 });
             }
         } catch (error) {
@@ -90,9 +90,6 @@ const BottomSheet = (props: any) => {
                 type: 'error',
                 text1: '카카오 로그인 실패: 502',
                 visibilityTime: 1500,
-                onHide: async () => {
-                    props.navigation.navigate('Main');
-                },
             });
         }
     }
@@ -107,6 +104,7 @@ const BottomSheet = (props: any) => {
                     text1: '네이버 로그인 성공!',
                     visibilityTime: 1500,
                     onHide: async () => {
+                        closeBottomSheet.start();
                         props.navigation.navigate('Main');
                     },
                 });

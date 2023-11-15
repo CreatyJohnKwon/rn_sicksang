@@ -1,15 +1,21 @@
 import styles from '../styles/stylist/ProfileStylist';
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
 import { useFocusEffect } from '@react-navigation/native';
 import { kakaoLogout } from "../logins/KakaoLogin";
 import { naverLogout } from '../logins/NaverLogin';
+import Storage from '../controller/Store';
+
+const LOGINFO: string = "loginStyleloginStyleloginStyleloginStyle";
 
 const ProfileScreen = ({ navigation }: any) => {
+  const [useLogInfo, setLogInfo] = useState<any>(null);
 
   useFocusEffect(
     useCallback(() => {
       // 화면이 포커스될 때 실행될 작업
       console.log('Profile is focused');
+
+      setLogInfo(Storage.getItem(LOGINFO)?.toString());
 
       return () => {
         // 화면이 포커스를 잃을 때(clean-up) 실행될 작업
@@ -58,14 +64,22 @@ const ProfileScreen = ({ navigation }: any) => {
 
   return (
     <styles.profile>
-      <styles.profileContainer>
-        <styles.kakaoButton onPress={isKakaoLogout}>
-          <styles.kakaoButtonText>카카오 로그아웃</styles.kakaoButtonText>
-        </styles.kakaoButton>
-        <styles.naverButton onPress={isNaverLogout}>
-          <styles.naverButtonText>네이버 로그아웃</styles.naverButtonText>
-        </styles.naverButton>
-      </styles.profileContainer>
+      <styles.profileContainer1st>
+        <styles.profileTitleMText>Bro.</styles.profileTitleMText>
+        <styles.profileTitleText>SICKSANG</styles.profileTitleText>
+      </styles.profileContainer1st>
+      <styles.profileContainer2nd>
+        <styles.profileSection>
+          <styles.profileInnerSection1st>
+            <styles.logoutButton onPress={useLogInfo == 'KAKAO' ? isKakaoLogout : isNaverLogout}>
+              <styles.logoutButtonText>로그아웃</styles.logoutButtonText>
+            </styles.logoutButton>
+          </styles.profileInnerSection1st>
+          <styles.profileInnerSection2nd>
+            <styles.profileStroke />
+          </styles.profileInnerSection2nd>
+        </styles.profileSection>
+      </styles.profileContainer2nd>
     </styles.profile>
   )
 };
