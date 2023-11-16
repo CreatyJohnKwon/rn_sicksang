@@ -1,10 +1,10 @@
 import { KakaoOAuthToken, KakaoProfile, login, logout, getProfile, unlink } from '@react-native-seoul/kakao-login';
 import storage from '../controller/Store';
 
-const NICKNAME = "NICKNAMENICKNAMENICKNAMENICKNAME";
-const EMAIL = "1D5E84F66AA2EEG16EE53G33ASE00ES5E13";
-const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
-const TOKEN = "TOKENTOKENTOKENTOKENTOKENTOKENTOKEN";
+const NICKNAME: any = "NICKNAMENICKNAMENICKNAMENICKNAME";
+const EMAIL: any = "1D5E84F66AA2EEG16EE53G33ASE00ES5E13";
+const IMAGE: any = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
+const TOKEN: any = "TOKENTOKENTOKENTOKENTOKENTOKENTOKEN";
 const LOGINFO: string = "loginStyleloginStyleloginStyleloginStyle";
 
 export const kakaoLogin = async (): Promise<boolean> => {

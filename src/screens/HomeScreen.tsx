@@ -20,9 +20,9 @@ const IMAGE = "IMAGEIMAGEIMAGEIMAGEIMAGEIMAGEIMAGE";
 
 const HomeScreen = ({navigation}: any) => {
   const [splash, setSplash] = useState<any>(null);
-  const [userName, setUserName] = useState('NULL');
-  const [imagePath, setImagePath] = useState(require('../assets/ic_launcher.png')); // 초기 이미지 설정
-  const [datas, setDatas] = useState();
+  const [userName, setUserName] = useState<any>('NULL');
+  const [imagePath, setImagePath] = useState<any>(require('../assets/ic_launcher.png')); // 초기 이미지 설정
+  const [datas, setDatas] = useState<any>();
 
   const renderItem = ({ item }: any) => <Item title={item.title} />;
 

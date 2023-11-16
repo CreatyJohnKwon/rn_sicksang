@@ -1,0 +1,24 @@
+"use strict";
+var __makeTemplateObject = (this && this.__makeTemplateObject) || function (cooked, raw) {
+    if (Object.defineProperty) { Object.defineProperty(cooked, "raw", { value: raw }); } else { cooked.raw = raw; }
+    return cooked;
+};
+exports.__esModule = true;
+// import { StyleSheet } from 'react-native';
+var colors_1 = require("../colors");
+var native_1 = require("@emotion/native");
+var HomeStylist = {
+    home: native_1["default"].SafeAreaView(templateObject_1 || (templateObject_1 = __makeTemplateObject(["\n    height: 100%;\n    width: 100%;\n    align-items: stretch;\n    background-color: ", ";\n  "], ["\n    height: 100%;\n    width: 100%;\n    align-items: stretch;\n    background-color: ", ";\n  "])), colors_1["default"].lightgray),
+    homeTitle: native_1["default"].View(templateObject_2 || (templateObject_2 = __makeTemplateObject(["\n    height: 10%;\n    align-items: center;\n    flex-direction: row;\n    margin-top: 42px;\n    margin-start: 25px;\n    margin-end: 20px;\n    background-color: ", ";\n  "], ["\n    height: 10%;\n    align-items: center;\n    flex-direction: row;\n    margin-top: 42px;\n    margin-start: 25px;\n    margin-end: 20px;\n    background-color: ", ";\n  "])), colors_1["default"].transparent),
+    homeBody: native_1["default"].View(templateObject_3 || (templateObject_3 = __makeTemplateObject(["\n    height: 80%;\n    align-items: stretch;\n    flex-direction: column;\n    margin-top: 15px;\n    margin-start: 20px;\n    margin-end: 20px;\n    background-color: ", ";\n  "], ["\n    height: 80%;\n    align-items: stretch;\n    flex-direction: column;\n    margin-top: 15px;\n    margin-start: 20px;\n    margin-end: 20px;\n    background-color: ", ";\n  "])), colors_1["default"].transparent),
+    homeUserName: native_1["default"].Text(templateObject_4 || (templateObject_4 = __makeTemplateObject(["\n    font-size: 17.5px;\n    font-weight: bold;\n    align-self: center;\n    flex: 1;\n    color: ", ";\n  "], ["\n    font-size: 17.5px;\n    font-weight: bold;\n    align-self: center;\n    flex: 1;\n    color: ", ";\n  "])), colors_1["default"].black),
+    homeUserImage: native_1["default"].ImageBackground(templateObject_5 || (templateObject_5 = __makeTemplateObject(["\n    align-self: center;\n    width: 48px;\n    height: 48px;\n  "], ["\n    align-self: center;\n    width: 48px;\n    height: 48px;\n  "]))),
+    homeTouchableImage: native_1["default"].TouchableOpacity(templateObject_6 || (templateObject_6 = __makeTemplateObject([""], [""]))),
+    homeButton: native_1["default"].TouchableOpacity(templateObject_7 || (templateObject_7 = __makeTemplateObject(["\n    height: 70px;\n    align-items: center;\n    justify-content: center;\n    flex-direction: row;\n    margin-start: 3px;\n    margin-end: 3px;\n    border-radius: 10px;\n    background-color: ", ";\n  "], ["\n    height: 70px;\n    align-items: center;\n    justify-content: center;\n    flex-direction: row;\n    margin-start: 3px;\n    margin-end: 3px;\n    border-radius: 10px;\n    background-color: ", ";\n  "])), colors_1["default"].black),
+    homeListContainer: native_1["default"].SafeAreaView(templateObject_8 || (templateObject_8 = __makeTemplateObject(["\n    margin-top: 10px;\n  "], ["\n    margin-top: 10px;\n  "]))),
+    homeListItem: native_1["default"].TouchableOpacity(templateObject_9 || (templateObject_9 = __makeTemplateObject(["\n    height: 100px;\n    background-color: ", ";\n    flex-direction: row;\n    padding: 20px;\n    margin-start: 3px;\n    margin-end: 3px;\n    margin-bottom: 12px;\n    border-radius: 10px;\n    border-width: 0.7px;\n    border-color: ", ";\n  "], ["\n    height: 100px;\n    background-color: ", ";\n    flex-direction: row;\n    padding: 20px;\n    margin-start: 3px;\n    margin-end: 3px;\n    margin-bottom: 12px;\n    border-radius: 10px;\n    border-width: 0.7px;\n    border-color: ", ";\n  "])), colors_1["default"].white, colors_1["default"].black),
+    homeListTitle: native_1["default"].Text(templateObject_10 || (templateObject_10 = __makeTemplateObject(["\n    font-size: 16px;\n    color: ", ";\n    font-weight: bold;\n    margin-start: 13px;\n    margin-top: 8.1px;\n  "], ["\n    font-size: 16px;\n    color: ", ";\n    font-weight: bold;\n    margin-start: 13px;\n    margin-top: 8.1px;\n  "])), colors_1["default"].black),
+    homeListImage: native_1["default"].ImageBackground(templateObject_11 || (templateObject_11 = __makeTemplateObject(["\n    height: 30px;\n    width: 30px;\n    margin-top: 5px;\n  "], ["\n    height: 30px;\n    width: 30px;\n    margin-top: 5px;\n  "])))
+};
+exports["default"] = HomeStylist;
+var templateObject_1, templateObject_2, templateObject_3, templateObject_4, templateObject_5, templateObject_6, templateObject_7, templateObject_8, templateObject_9, templateObject_10, templateObject_11;
